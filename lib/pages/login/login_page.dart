@@ -125,7 +125,10 @@ class _LoginPageState extends State<LoginPage> {
     print('hello $num');
 
     setState(() {
-      if(num == -1 && count >= 0){
+      if(num == -1){
+        if(count<1){
+          count=1;
+        }
         count--;
         if(input.length > 0)
           input = input.substring(0, input.length - 1);
@@ -140,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
         count = 0;
         print(input);
         input = "";
-        _showMaterialDialog('Error', 'Invalid PIN Please try again.');
+        _showMaterialDialog('ERROR', 'Invalid PIN Please try again.');
       }
       else{
         count++;
