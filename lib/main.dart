@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food/pages/login/home_page.dart';
 
 import 'pages/login/login_page.dart';
 
@@ -24,11 +25,24 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
           bodyText2: TextStyle(
-            fontSize: 14.0,
+            fontSize: 18.0,
+          ),
+          headline4: TextStyle(
+            fontSize: 24.0,
+            color: Colors.white
+          ),
+          headline5: TextStyle(
+            fontSize: 16.0,
+            color: Colors.white
           ),
         ),
       ),
-      home: LoginPage(),
+      //home: LoginPage(),
+      routes: {
+        LoginPage.routeName : (context) => const LoginPage(),
+        HomePage.routeName : (context) => const HomePage(),
+      },
+      initialRoute: LoginPage.routeName,
     );
   }
 }
